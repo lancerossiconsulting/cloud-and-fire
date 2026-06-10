@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Flint Hills Cloud &amp; Fire Fellowship</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1e3a5f; --navy-dark: #162d4a; --slate: #64748b;
+      --orange: #d97706; --orange-lt: #f59e0b;
+      --cream: #fdf8f1; --cream-border: #e8dfc8;
+      --white: #ffffff; --text: #1a1a2e; --text-body: #374151;
+    }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; font-size: 16px; }
+
+    /* ── Header ── */
+    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .site-name { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .site-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
+    .site-nav { display: flex; gap: 28px; }
+    .site-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
+    .site-nav a:hover, .site-nav a.active { color: #fff; }
+
+    /* ── Page Hero ── */
+    .page-hero { background: var(--navy); padding: 72px 56px 64px; text-align: center; }
+    .page-hero .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-lt); margin-bottom: 18px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 20px; line-height: 1.2; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,.75); max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Content ── */
+    .page-content { max-width: 860px; margin: 0 auto; padding: 64px 56px 80px; }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--navy); margin: 56px 0 20px; border-bottom: 2px solid var(--cream-border); padding-bottom: 12px; }
+    .section-heading:first-child { margin-top: 0; }
+    p { color: var(--text-body); margin-bottom: 18px; line-height: 1.8; }
+
+    /* ── Featured article card ── */
+    .featured-article { display: flex; gap: 32px; background: var(--cream); border: 2px solid var(--navy); border-radius: 16px; padding: 36px; margin-bottom: 48px; text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s; }
+    .featured-article:hover { border-color: var(--orange); box-shadow: 0 4px 20px rgba(30,58,95,.1); }
+    .featured-article-text { flex: 1; }
+    .featured-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+    .featured-article h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 12px; line-height: 1.3; }
+    .featured-article p { font-size: 14px; color: var(--slate); margin: 0 0 18px; line-height: 1.7; }
+    .read-link { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); }
+
+    /* ── Forthcoming card ── */
+    .forthcoming { background: #f8f8f8; border: 1px dashed #ccc; border-radius: 16px; padding: 36px; margin-bottom: 48px; opacity: .65; }
+    .forthcoming-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--slate); margin-bottom: 10px; }
+    .forthcoming h2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; color: var(--navy); margin-bottom: 12px; }
+    .forthcoming p { font-size: 14px; color: var(--slate); margin: 0; line-height: 1.7; }
+
+    /* ── Reading list ── */
+    .reading-list { display: flex; flex-direction: column; gap: 1px; border: 1px solid var(--cream-border); border-radius: 12px; overflow: hidden; }
+    .reading-item { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 16px; padding: 20px 24px; background: var(--white); border-bottom: 1px solid var(--cream-border); }
+    .reading-item:last-child { border-bottom: none; }
+    .reading-item:nth-child(odd) { background: var(--cream); }
+    .reading-title { font-weight: 600; font-size: 15px; color: var(--navy); margin-bottom: 3px; }
+    .reading-author { font-size: 13px; color: var(--slate); }
+    .reading-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); white-space: nowrap; padding-top: 3px; }
+
+    /* ── Footer ── */
+    .page-footer { background: var(--navy); padding: 48px 56px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .footer-logo { height: 88px; width: auto; display: block; margin-bottom: 4px; }
+    .footer-name { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .footer-note { font-size: 11px; color: rgba(255,255,255,.35); font-style: italic; }
+    .footer-nav { display: flex; gap: 24px; margin-top: 6px; }
+    .footer-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: #fff; }
+
+    @media (max-width: 960px) {
+      .page-header { padding: 14px 28px; }
+      .page-hero { padding: 52px 28px 48px; }
+      .page-content { padding: 48px 28px 64px; }
+      .featured-article { flex-direction: column; gap: 20px; }
+    }
+    @media (max-width: 600px) {
+      .page-header { padding: 14px 20px; }
+      .site-nav { display: none; }
+      .page-hero { padding: 40px 20px 36px; }
+      .page-content { padding: 36px 20px 56px; }
+      .site-logo { height: 40px; }
+      .reading-item { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="site-name" href="index.html">
+      <img class="site-logo" src="logo-header-white.png" alt="Cloud &amp; Fire Fellowship">
+      <span>Flint Hills Cloud &amp; Fire Fellowship</span>
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <span class="tag">Reading &amp; Research</span>
+    <h1>Resources for Church Leaders</h1>
+    <p>Articles, research, and curated reading for those doing the work of structured listening in congregational life.</p>
+  </div>
+
+  <div class="page-content">
+
+    <h2 class="section-heading">From the Fellowship</h2>
+
+    <a class="featured-article" href="index.html">
+      <div class="featured-article-text">
+        <div class="featured-tag">Featured &nbsp;&middot;&nbsp; Faith &amp; Democracy</div>
+        <h2>The Living Pillar: Congregational Listening &amp; Discernment</h2>
+        <p>The fellowship's founding essay — on the theology of structured listening, the NCDD engagement streams framework, and what church leaders gain when they create space for their congregations to be truly heard.</p>
+        <span class="read-link">Read the Essay &rarr;</span>
+      </div>
+    </a>
+
+    <div class="forthcoming">
+      <div class="forthcoming-tag">Forthcoming &nbsp;&middot;&nbsp; Academic Publication</div>
+      <h2>Metacommunication in Metaphysics</h2>
+      <p>The fellowship's inaugural research report — documenting findings from the first cohort cycle and contributing to the peer-reviewed literature on structured dialogue in faith communities. Publication date to be determined following cohort completion.</p>
+    </div>
+
+    <h2 class="section-heading">Curated Reading</h2>
+    <p>A short list of texts that inform the fellowship's theology and methodology — for church leaders who want to go deeper.</p>
+
+    <div class="reading-list">
+      <div class="reading-item">
+        <div>
+          <div class="reading-title">The Deliberative Democracy Handbook</div>
+          <div class="reading-author">Gastil &amp; Levine, eds.</div>
+        </div>
+        <div class="reading-tag">Methodology</div>
+      </div>
+      <div class="reading-item">
+        <div>
+          <div class="reading-title">A Public Faith: How Followers of Christ Should Serve the Common Good</div>
+          <div class="reading-author">Miroslav Volf</div>
+        </div>
+        <div class="reading-tag">Theology</div>
+      </div>
+      <div class="reading-item">
+        <div>
+          <div class="reading-title">Choosing the Good: Christian Ethics in a Complex World</div>
+          <div class="reading-author">Dennis Hollinger</div>
+        </div>
+        <div class="reading-tag">Ethics</div>
+      </div>
+      <div class="reading-item">
+        <div>
+          <div class="reading-title">The Righteous Mind: Why Good People Are Divided by Politics and Religion</div>
+          <div class="reading-author">Jonathan Haidt</div>
+        </div>
+        <div class="reading-tag">Psychology</div>
+      </div>
+      <div class="reading-item">
+        <div>
+          <div class="reading-title">Democracy and Tradition</div>
+          <div class="reading-author">Jeffrey Stout</div>
+        </div>
+        <div class="reading-tag">Political Theology</div>
+      </div>
+      <div class="reading-item">
+        <div>
+          <div class="reading-title">Humble Inquiry: The Gentle Art of Asking Instead of Telling</div>
+          <div class="reading-author">Edgar Schein</div>
+        </div>
+        <div class="reading-tag">Facilitation</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <img class="footer-logo" src="logo-header.png" alt="Cloud &amp; Fire Fellowship">
+      <span class="footer-name">Flint Hills Cloud &amp; Fire Fellowship</span>
+      <span class="footer-note">Manhattan, Kansas &middot; June 2026</span>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

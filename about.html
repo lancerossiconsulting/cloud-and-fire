@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Flint Hills Cloud &amp; Fire Fellowship</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1e3a5f; --navy-dark: #162d4a; --slate: #64748b;
+      --orange: #d97706; --orange-lt: #f59e0b;
+      --cream: #fdf8f1; --cream-border: #e8dfc8;
+      --white: #ffffff; --text: #1a1a2e; --text-body: #374151;
+    }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; font-size: 16px; }
+
+    /* ── Header ── */
+    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .site-name { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .site-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
+    .site-nav { display: flex; gap: 28px; }
+    .site-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
+    .site-nav a:hover, .site-nav a.active { color: #fff; }
+
+    /* ── Page Hero ── */
+    .page-hero { background: var(--navy); padding: 72px 56px 64px; text-align: center; }
+    .page-hero .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-lt); margin-bottom: 18px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 20px; line-height: 1.2; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,.75); max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Content ── */
+    .page-content { max-width: 860px; margin: 0 auto; padding: 64px 56px 80px; }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--navy); margin: 56px 0 18px; border-bottom: 2px solid var(--cream-border); padding-bottom: 12px; }
+    .section-heading:first-child { margin-top: 0; }
+    p { color: var(--text-body); margin-bottom: 18px; line-height: 1.8; }
+
+    /* ── Scripture pull ── */
+    .pull-quote { background: var(--navy); border-radius: 14px; padding: 36px 40px; margin: 40px 0; text-align: center; }
+    .pull-quote blockquote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: #fff; line-height: 1.6; margin-bottom: 14px; }
+    .pull-quote cite { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-lt); }
+
+    /* ── Values grid ── */
+    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0 40px; }
+    .value-card { background: var(--cream); border: 1px solid var(--cream-border); border-radius: 12px; padding: 28px 24px; }
+    .value-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 10px; }
+    .value-card p { font-size: 14px; color: var(--slate); margin: 0; line-height: 1.7; }
+
+    /* ── Bio placeholder ── */
+    .bio-block { display: flex; gap: 32px; align-items: flex-start; background: var(--cream); border: 1px solid var(--cream-border); border-radius: 14px; padding: 32px; margin: 28px 0; }
+    .bio-avatar { width: 88px; height: 88px; border-radius: 50%; background: var(--navy); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .bio-avatar span { font-family: 'Playfair Display', serif; font-size: 28px; color: rgba(255,255,255,.4); }
+    .bio-text h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 4px; }
+    .bio-text .bio-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+    .bio-text p { font-size: 14px; color: var(--slate); margin: 0; line-height: 1.7; }
+
+    /* ── CTA ── */
+    .cta-block { background: var(--navy); border-radius: 16px; padding: 48px 40px; text-align: center; margin-top: 56px; }
+    .cta-block h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 14px; }
+    .cta-block p { color: rgba(255,255,255,.75); max-width: 480px; margin: 0 auto 28px; }
+    .cta-btn { display: inline-block; background: var(--orange); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 14px 32px; border-radius: 6px; transition: background .2s; }
+    .cta-btn:hover { background: var(--orange-lt); }
+
+    /* ── Footer ── */
+    .page-footer { background: var(--navy); padding: 48px 56px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .footer-logo { height: 88px; width: auto; display: block; margin-bottom: 4px; }
+    .footer-name { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .footer-note { font-size: 11px; color: rgba(255,255,255,.35); font-style: italic; }
+    .footer-nav { display: flex; gap: 24px; margin-top: 6px; }
+    .footer-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: #fff; }
+
+    @media (max-width: 960px) {
+      .page-header { padding: 14px 28px; }
+      .page-hero { padding: 52px 28px 48px; }
+      .page-content { padding: 48px 28px 64px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .bio-block { flex-direction: column; align-items: center; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .page-header { padding: 14px 20px; }
+      .site-nav { display: none; }
+      .page-hero { padding: 40px 20px 36px; }
+      .page-content { padding: 36px 20px 56px; }
+      .cta-block { padding: 36px 24px; }
+      .site-logo { height: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="site-name" href="index.html">
+      <img class="site-logo" src="logo-header-white.png" alt="Cloud &amp; Fire Fellowship">
+      <span>Flint Hills Cloud &amp; Fire Fellowship</span>
+    </a>
+    <nav class="site-nav">
+      <a href="about.html" class="active">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <span class="tag">Who We Are</span>
+    <h1>Rooted in Scripture. Grounded in Research. Built for Your Church.</h1>
+    <p>A Christian fellowship for church leaders committed to the hard, holy work of listening well.</p>
+  </div>
+
+  <div class="page-content">
+
+    <h2 class="section-heading">Our Mission</h2>
+    <p>Flint Hills Cloud &amp; Fire Fellowship exists to form church leaders in the practice of structured listening — equipping them to hear what their congregations are actually carrying and to respond with pastoral care that is grounded, not guessed.</p>
+    <p>We work at the intersection of two deep traditions: the Church's centuries-long practice of communal discernment, and three decades of peer-reviewed research in structured public dialogue. Neither tradition alone is sufficient. Together, they give church leaders something durable: a practice, not just a method; formation, not just a technique.</p>
+
+    <div class="pull-quote">
+      <blockquote>"Understand this, my dear brothers and sisters: You must all be quick to listen, slow to speak, and slow to get angry."</blockquote>
+      <cite>James 1:19 &nbsp;&middot;&nbsp; NLT</cite>
+    </div>
+
+    <h2 class="section-heading">The Name</h2>
+    <p>The name comes from Exodus 13. When Israel left Egypt and entered the wilderness, God guided the whole people — not just its leaders — with a pillar of cloud by day and fire by night. It was communal guidance, given for a journey through uncertain terrain, held in common by everyone making the crossing.</p>
+    <p>That image names what this fellowship aspires to be. Cloud: the presence that goes ahead, the deliberative clarity that comes from listening well together. Fire: the refining heat of honest conversation, the transformative work that only happens when people speak truthfully and are truly heard. Both. Together. Moving the whole community forward.</p>
+
+    <h2 class="section-heading">What We Believe About Listening</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Listening is a spiritual discipline</h3>
+        <p>The discernment tradition of the Church has always held that listening to one another and listening to God are not competing activities. Structured conversation, held prayerfully, is a form of communal formation.</p>
+      </div>
+      <div class="value-card">
+        <h3>Design matters</h3>
+        <p>Not all conversation is equal. Research consistently shows that how a conversation is structured determines whether it builds understanding or hardens conflict. Good facilitation is an act of pastoral stewardship.</p>
+      </div>
+      <div class="value-card">
+        <h3>The congregation knows things the pastor doesn't</h3>
+        <p>Surveys and hallway conversations miss what people are actually carrying. Structured dialogue surfaces the grief, doubt, hope, and conflict that live beneath the surface of ordinary church life.</p>
+      </div>
+      <div class="value-card">
+        <h3>The local church is irreplaceable</h3>
+        <p>No civic institution reaches as deeply into community life as the congregation. A church that listens well becomes a trusted anchor — for its members and for the wider community it serves.</p>
+      </div>
+    </div>
+
+    <h2 class="section-heading">Where We're From</h2>
+    <p>The fellowship is rooted in Manhattan, Kansas — a small city in the Flint Hills, home to Kansas State University, Fort Riley, and a network of congregations that spans the full range of American Christian tradition. The Flint Hills have a way of asking honest questions. The land is open, the seasons are demanding, and the communities here know what it means to depend on one another.</p>
+    <p>That context shapes what the fellowship is for: not a conference program or a parachurch add-on, but a practice built for and by the churches of this place, offered to any congregation willing to do the work of listening well.</p>
+
+    <h2 class="section-heading">Leadership</h2>
+    <div class="bio-block">
+      <div class="bio-avatar"><span>LR</span></div>
+      <div class="bio-text">
+        <h3>Lance Rossi</h3>
+        <div class="bio-title">Founder &amp; Director</div>
+        <p>Lance Rossi is a communication strategist, researcher, and practitioner based in Manhattan, Kansas. His work sits at the intersection of theological formation, deliberative democracy, and organizational communication. He is a member of [Church Name] and a student at [Seminary]. Fuller bio forthcoming.</p>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h2>Learn About the Cohort</h2>
+      <p>See how the fellowship works, what the session format looks like, and how to express interest.</p>
+      <a class="cta-btn" href="programs.html">View Programs</a>
+    </div>
+
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <img class="footer-logo" src="logo-header.png" alt="Cloud &amp; Fire Fellowship">
+      <span class="footer-name">Flint Hills Cloud &amp; Fire Fellowship</span>
+      <span class="footer-note">Manhattan, Kansas &middot; June 2026</span>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

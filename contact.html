@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Flint Hills Cloud &amp; Fire Fellowship</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1e3a5f; --navy-dark: #162d4a; --slate: #64748b;
+      --orange: #d97706; --orange-lt: #f59e0b;
+      --cream: #fdf8f1; --cream-border: #e8dfc8;
+      --white: #ffffff; --text: #1a1a2e; --text-body: #374151;
+    }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; font-size: 16px; }
+
+    /* ── Header ── */
+    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .site-name { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .site-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
+    .site-nav { display: flex; gap: 28px; }
+    .site-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
+    .site-nav a:hover, .site-nav a.active { color: #fff; }
+
+    /* ── Page Hero ── */
+    .page-hero { background: var(--navy); padding: 72px 56px 64px; text-align: center; }
+    .page-hero .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-lt); margin-bottom: 18px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 20px; line-height: 1.2; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,.75); max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Content ── */
+    .page-content { max-width: 860px; margin: 0 auto; padding: 64px 56px 80px; }
+    p { color: var(--text-body); margin-bottom: 18px; line-height: 1.8; }
+
+    /* ── Contact paths ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0 56px; }
+    .contact-card { border: 2px solid var(--cream-border); border-radius: 16px; padding: 36px 32px; display: flex; flex-direction: column; gap: 16px; }
+    .contact-card.primary { border-color: var(--navy); background: var(--cream); }
+    .contact-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); }
+    .contact-card h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--navy); line-height: 1.3; }
+    .contact-card p { font-size: 14px; color: var(--slate); margin: 0; line-height: 1.7; flex: 1; }
+    .contact-btn { display: inline-block; background: var(--navy); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 13px 26px; border-radius: 6px; transition: background .2s; align-self: flex-start; margin-top: 4px; }
+    .contact-btn:hover { background: var(--orange); }
+    .contact-card.primary .contact-btn { background: var(--orange); }
+    .contact-card.primary .contact-btn:hover { background: var(--orange-lt); }
+
+    /* ── Location block ── */
+    .location-block { background: var(--cream); border: 1px solid var(--cream-border); border-radius: 14px; padding: 36px 40px; margin-top: 16px; }
+    .location-block h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--navy); margin-bottom: 12px; }
+    .location-block p { font-size: 14px; color: var(--slate); margin-bottom: 10px; }
+    .location-block p:last-child { margin-bottom: 0; }
+
+    /* ── Footer ── */
+    .page-footer { background: var(--navy); padding: 48px 56px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .footer-logo { height: 88px; width: auto; display: block; margin-bottom: 4px; }
+    .footer-name { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .footer-note { font-size: 11px; color: rgba(255,255,255,.35); font-style: italic; }
+    .footer-nav { display: flex; gap: 24px; margin-top: 6px; }
+    .footer-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: #fff; }
+
+    @media (max-width: 960px) {
+      .page-header { padding: 14px 28px; }
+      .page-hero { padding: 52px 28px 48px; }
+      .page-content { padding: 48px 28px 64px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .page-header { padding: 14px 20px; }
+      .site-nav { display: none; }
+      .page-hero { padding: 40px 20px 36px; }
+      .page-content { padding: 36px 20px 56px; }
+      .site-logo { height: 40px; }
+      .location-block { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="site-name" href="index.html">
+      <img class="site-logo" src="logo-header-white.png" alt="Cloud &amp; Fire Fellowship">
+      <span>Flint Hills Cloud &amp; Fire Fellowship</span>
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <span class="tag">Get in Touch</span>
+    <h1>Start a Conversation</h1>
+    <p>Whether you're a church leader exploring a cohort or an organization interested in partnership — we'd like to hear from you.</p>
+  </div>
+
+  <div class="page-content">
+
+    <p>The fellowship is in its founding stage. The best path forward is a direct conversation — not a form. Tell us briefly who you are, what your congregation is navigating, and what drew you here. We'll respond personally.</p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card primary">
+        <div class="contact-tag">For Church Leaders</div>
+        <h2>Express Interest in a Cohort</h2>
+        <p>You're a pastor, associate minister, or lay leader wondering whether a fellowship cohort is the right fit for your congregation. Tell us about your church and what you're hoping to address. We'll share cohort details and talk through whether this is the right season.</p>
+        <a class="contact-btn" href="mailto:info@cloudfireflinthills.org?subject=Cohort Interest — [Your Church Name]&body=Hello,%0A%0AI'm reaching out to express interest in the Cloud %26 Fire Fellowship cohort.%0A%0AChurch name:%0ADenomination:%0AApproximate congregation size:%0AWhat we're navigating:%0A%0AThank you.">Email Us About a Cohort</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-tag">For Partners &amp; Collaborators</div>
+        <h2>Church Partnership or Research Inquiry</h2>
+        <p>You represent a church network, seminary, foundation, or civic organization interested in the fellowship's model, research program, or potential collaboration. We welcome these conversations and will respond to serious inquiries directly.</p>
+        <a class="contact-btn" href="mailto:info@cloudfireflinthills.org?subject=Partnership Inquiry&body=Hello,%0A%0AI'm reaching out regarding a potential partnership or collaboration with Cloud %26 Fire Fellowship.%0A%0AOrganization:%0ANature of inquiry:%0A%0AThank you.">Email About Partnership</a>
+      </div>
+
+    </div>
+
+    <div class="location-block">
+      <h3>Where We Are</h3>
+      <p>Flint Hills Cloud &amp; Fire Fellowship is based in <strong>Manhattan, Kansas</strong> — the Flint Hills region of northeast Kansas. Cohort sessions are held in-person, with remote participation options under development for future cohorts.</p>
+      <p>Manhattan is home to Kansas State University, Fort Riley, and a wide range of congregations across the full spectrum of American Christian tradition. It is a community that already knows how to hold difference — and how much work that takes.</p>
+    </div>
+
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <img class="footer-logo" src="logo-header.png" alt="Cloud &amp; Fire Fellowship">
+      <span class="footer-name">Flint Hills Cloud &amp; Fire Fellowship</span>
+      <span class="footer-note">Manhattan, Kansas &middot; June 2026</span>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

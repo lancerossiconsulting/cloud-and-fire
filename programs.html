@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs — Flint Hills Cloud &amp; Fire Fellowship</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1e3a5f; --navy-dark: #162d4a; --slate: #64748b;
+      --orange: #d97706; --orange-lt: #f59e0b;
+      --cream: #fdf8f1; --cream-border: #e8dfc8;
+      --white: #ffffff; --text: #1a1a2e; --text-body: #374151;
+    }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; font-size: 16px; }
+
+    /* ── Header ── */
+    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .site-name { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .site-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
+    .site-nav { display: flex; gap: 28px; }
+    .site-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
+    .site-nav a:hover, .site-nav a.active { color: #fff; }
+
+    /* ── Page Hero ── */
+    .page-hero { background: var(--navy); padding: 72px 56px 64px; text-align: center; }
+    .page-hero .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-lt); margin-bottom: 18px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 20px; line-height: 1.2; }
+    .page-hero p { font-size: 17px; color: rgba(255,255,255,.75); max-width: 580px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Content ── */
+    .page-content { max-width: 860px; margin: 0 auto; padding: 64px 56px 80px; }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--navy); margin: 56px 0 18px; border-bottom: 2px solid var(--cream-border); padding-bottom: 12px; }
+    .section-heading:first-child { margin-top: 0; }
+    p { color: var(--text-body); margin-bottom: 18px; line-height: 1.8; }
+
+    /* ── Phase Cards ── */
+    .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 28px 0 40px; }
+    .phase-card { background: var(--cream); border: 1px solid var(--cream-border); border-radius: 12px; padding: 28px 22px; }
+    .phase-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+    .phase-card h3 { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--navy); margin-bottom: 10px; }
+    .phase-card p { font-size: 14px; color: var(--slate); margin: 0; line-height: 1.7; }
+
+    /* ── Outcomes List ── */
+    .outcomes { list-style: none; margin: 0 0 28px; padding: 0; }
+    .outcomes li { padding: 10px 0 10px 28px; position: relative; color: var(--text-body); border-bottom: 1px solid var(--cream-border); font-size: 15px; }
+    .outcomes li::before { content: ''; position: absolute; left: 0; top: 19px; width: 10px; height: 10px; border-radius: 50%; background: var(--orange-lt); }
+
+    /* ── Details Block ── */
+    .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 40px; }
+    .detail-item { background: var(--cream); border: 1px solid var(--cream-border); border-radius: 10px; padding: 20px 22px; }
+    .detail-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+    .detail-value { font-size: 15px; color: var(--navy); font-weight: 600; }
+    .detail-note { font-size: 13px; color: var(--slate); margin-top: 4px; }
+
+    /* ── CTA ── */
+    .cta-block { background: var(--navy); border-radius: 16px; padding: 48px 40px; text-align: center; margin-top: 56px; }
+    .cta-block h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; margin-bottom: 14px; }
+    .cta-block p { color: rgba(255,255,255,.75); max-width: 480px; margin: 0 auto 28px; }
+    .cta-btn { display: inline-block; background: var(--orange); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; padding: 14px 32px; border-radius: 6px; transition: background .2s; }
+    .cta-btn:hover { background: var(--orange-lt); }
+
+    /* ── Footer ── */
+    .page-footer { background: var(--navy); padding: 48px 56px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .footer-logo { height: 88px; width: auto; display: block; margin-bottom: 4px; }
+    .footer-name { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.8); }
+    .footer-note { font-size: 11px; color: rgba(255,255,255,.35); font-style: italic; }
+    .footer-nav { display: flex; gap: 24px; margin-top: 6px; }
+    .footer-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; }
+    .footer-nav a:hover { color: #fff; }
+
+    @media (max-width: 960px) {
+      .page-header { padding: 14px 28px; }
+      .page-hero { padding: 52px 28px 48px; }
+      .page-content { padding: 48px 28px 64px; }
+      .phase-grid { grid-template-columns: 1fr; }
+      .details-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .page-header { padding: 14px 20px; }
+      .site-nav { display: none; }
+      .page-hero { padding: 40px 20px 36px; }
+      .page-content { padding: 36px 20px 56px; }
+      .cta-block { padding: 36px 24px; }
+      .site-logo { height: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="page-header">
+    <a class="site-name" href="index.html">
+      <img class="site-logo" src="logo-header-white.png" alt="Cloud &amp; Fire Fellowship">
+      <span>Flint Hills Cloud &amp; Fire Fellowship</span>
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="programs.html" class="active">Programs</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <span class="tag">The Fellowship Cohort</span>
+    <h1>A Practice of Listening, Built for the Local Church</h1>
+    <p>Structured formation for church leaders who want to hear what their congregations are actually carrying — and know how to act on it.</p>
+  </div>
+
+  <div class="page-content">
+
+    <h2 class="section-heading">What a Cohort Is</h2>
+    <p>Each fellowship cohort brings together a small group of church leaders for formation in structured listening and facilitation. The goal is not a program you add to your calendar; it is a practice you carry back into your ministry. Fellows leave equipped to host dialogue, hold deliberation, and surface real discernment within their own congregations.</p>
+    <p>The cohort model is interdenominational by design. Baptist and Catholic, mainline and evangelical, rural congregation and urban parish — the shared process is the constant; the theological and ecclesial context is each church's own.</p>
+
+    <h2 class="section-heading">The Three-Phase Session Format</h2>
+    <p>Every fellowship session moves through three distinct phases, each suited to a different kind of work. Trained facilitators hold the boundaries between them — ensuring the group doesn't collapse into debate before it has listened, or rush to action before it has deliberated.</p>
+
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-num">Phase 1</div>
+        <h3>Dialogue</h3>
+        <p>Builds trust and surfaces the full range of perspectives in the room. No pressure toward resolution. The goal is to hear — before anyone begins to persuade.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">Phase 2</div>
+        <h3>Deliberation</h3>
+        <p>Introduces honest framing of tradeoffs and competing values. Participants weigh options against their own convictions rather than reacting to positions.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">Phase 3</div>
+        <h3>Discernment &amp; Action</h3>
+        <p>Where appropriate, identifies concrete next steps the congregation or its leadership can take in response to what has been heard.</p>
+      </div>
+    </div>
+
+    <h2 class="section-heading">The Research Component</h2>
+    <p>Each cohort carries a single driving question — not assigned by the fellowship, but one that emerges from the congregation's own discourse. Fellows document what surfaces in their dialogues, contribute findings to a shared body of learning, and strengthen future cohorts and partner churches through what they discover.</p>
+    <p>Over time, this cumulative documentation forms the basis for the fellowship's academic publications — structured inquiry into how faith communities communicate when the stakes are real.</p>
+
+    <h2 class="section-heading">What Participating Leaders Receive</h2>
+    <ul class="outcomes">
+      <li>Formation in structured facilitation, Christian listening, and discernment practices</li>
+      <li>A repeatable process for hosting dialogue within your own congregation</li>
+      <li>Concise summaries of major themes, recurring questions, and unresolved tensions from your sessions</li>
+      <li>A cohort of peers navigating the same work across different church contexts</li>
+      <li>Practical ministry intelligence — surfaced from your own people, in their own words</li>
+    </ul>
+
+    <h2 class="section-heading">Cohort Details</h2>
+    <p>Details for the inaugural cohort — including schedule, format, time commitment, and cost — will be confirmed and shared directly with church leaders who have expressed interest. If you are exploring whether this is the right fit for your congregation, the best next step is a conversation.</p>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <div class="detail-label">Format</div>
+        <div class="detail-value">In-person cohort sessions</div>
+        <div class="detail-note">Manhattan, Kansas — with remote options under development</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Who It's For</div>
+        <div class="detail-value">Church leaders &amp; facilitators</div>
+        <div class="detail-note">Pastors, associate ministers, lay leaders with facilitation responsibility</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Denomination</div>
+        <div class="detail-value">Interdenominational</div>
+        <div class="detail-note">The process is shared; your theological context is your own</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Cohort Size</div>
+        <div class="detail-value">Limited enrollment</div>
+        <div class="detail-note">Small cohorts preserve the quality of formation and peer learning</div>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <h2>Express Your Interest</h2>
+      <p>Tell us about your congregation and what you're hoping to address. We'll be in touch about the next cohort.</p>
+      <a class="cta-btn" href="contact.html">Get in Touch</a>
+    </div>
+
+  </div>
+
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <img class="footer-logo" src="logo-header.png" alt="Cloud &amp; Fire Fellowship">
+      <span class="footer-name">Flint Hills Cloud &amp; Fire Fellowship</span>
+      <span class="footer-note">Manhattan, Kansas &middot; June 2026</span>
+      <nav class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
