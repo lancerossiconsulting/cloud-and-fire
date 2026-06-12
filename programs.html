@@ -20,12 +20,14 @@
     body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; font-size: 16px; }
 
     /* ── Header ── */
-    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; row-gap: 8px; position: sticky; top: 0; z-index: 100; }
     .site-name { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; }
     .site-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
     .site-nav { display: flex; gap: 28px; }
     .site-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
     .site-nav a:hover, .site-nav a.active { color: #fff; }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 4px; color: #fff; }
+    .nav-toggle svg { width: 26px; height: 26px; display: block; }
 
     /* ── Page Hero ── */
     .page-hero { background: var(--navy); padding: 72px 56px 64px; text-align: center; }
@@ -77,6 +79,9 @@
 
     @media (max-width: 960px) {
       .page-header { padding: 14px 28px; }
+      .site-name { font-size: 10px; letter-spacing: 1.8px; gap: 10px; }
+      .site-logo { height: 44px; }
+      .site-nav { gap: 18px; }
       .page-hero { padding: 52px 28px 48px; }
       .page-content { padding: 48px 28px 64px; }
       .phase-grid { grid-template-columns: 1fr; }
@@ -84,7 +89,10 @@
     }
     @media (max-width: 600px) {
       .page-header { padding: 14px 20px; }
-      .site-nav { display: none; }
+      .nav-toggle { display: block; }
+      .site-nav { display: none; flex-basis: 100%; flex-direction: column; gap: 0; padding-top: 6px; }
+      .page-header.nav-open .site-nav { display: flex; }
+      .site-nav a { padding: 11px 0; border-top: 1px solid rgba(255,255,255,.1); font-size: 12px; }
       .page-hero { padding: 40px 20px 36px; }
       .page-content { padding: 36px 20px 56px; }
       .cta-block { padding: 36px 24px; }
@@ -99,6 +107,9 @@
       <img class="site-logo" src="logo-header-white.png" alt="Cloud &amp; Fire Fellowship">
       <span>Flint Hills Cloud &amp; Fire Fellowship</span>
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var h=this.closest('.page-header');h.classList.toggle('nav-open');this.setAttribute('aria-expanded',h.classList.contains('nav-open'))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
     <nav class="site-nav">
       <a href="about.html">About</a>
       <a href="programs.html" class="active">Programs</a>

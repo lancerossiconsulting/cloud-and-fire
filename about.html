@@ -20,17 +20,21 @@
     body { font-family: 'Montserrat', sans-serif; color: var(--text); background: var(--white); line-height: 1.75; font-size: 16px; }
 
     /* ── Header ── */
-    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .page-header { background: var(--navy); padding: 14px 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; row-gap: 8px; position: sticky; top: 0; z-index: 100; }
     .site-name { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; }
     .site-logo { height: 52px; width: auto; display: block; flex-shrink: 0; }
     .site-nav { display: flex; gap: 28px; }
     .site-nav a { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
     .site-nav a:hover, .site-nav a.active { color: #fff; }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 4px; color: #fff; }
+    .nav-toggle svg { width: 26px; height: 26px; display: block; }
 
     /* ── Page Hero ── */
     .page-hero { background: var(--navy); padding: 72px 56px 64px; text-align: center; }
     .page-hero .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--orange-lt); margin-bottom: 18px; }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: #fff; max-width: 700px; margin: 0 auto 20px; line-height: 1.2; }
+    /* sentences wrap as whole units only — never split mid-sentence */
+    .page-hero h1 .h1-sentence { display: inline-block; }
     .page-hero p { font-size: 17px; color: rgba(255,255,255,.75); max-width: 580px; margin: 0 auto; line-height: 1.7; }
 
     /* ── Content ── */
@@ -77,6 +81,9 @@
 
     @media (max-width: 960px) {
       .page-header { padding: 14px 28px; }
+      .site-name { font-size: 10px; letter-spacing: 1.8px; gap: 10px; }
+      .site-logo { height: 44px; }
+      .site-nav { gap: 18px; }
       .page-hero { padding: 52px 28px 48px; }
       .page-content { padding: 48px 28px 64px; }
       .values-grid { grid-template-columns: 1fr; }
@@ -84,8 +91,13 @@
     }
     @media (max-width: 600px) {
       .page-header { padding: 14px 20px; }
-      .site-nav { display: none; }
+      .nav-toggle { display: block; }
+      .site-nav { display: none; flex-basis: 100%; flex-direction: column; gap: 0; padding-top: 6px; }
+      .page-header.nav-open .site-nav { display: flex; }
+      .site-nav a { padding: 11px 0; border-top: 1px solid rgba(255,255,255,.1); font-size: 12px; }
       .page-hero { padding: 40px 20px 36px; }
+      /* keep each whole sentence on one line down to 320px-wide phones */
+      .page-hero h1 { font-size: clamp(24px, 8vw, 30px); }
       .page-content { padding: 36px 20px 56px; }
       .cta-block { padding: 36px 24px; }
       .site-logo { height: 40px; }
@@ -99,6 +111,9 @@
       <img class="site-logo" src="logo-header-white.png" alt="Cloud &amp; Fire Fellowship">
       <span>Flint Hills Cloud &amp; Fire Fellowship</span>
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var h=this.closest('.page-header');h.classList.toggle('nav-open');this.setAttribute('aria-expanded',h.classList.contains('nav-open'))">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
     <nav class="site-nav">
       <a href="about.html" class="active">About</a>
       <a href="programs.html">Programs</a>
@@ -109,7 +124,7 @@
 
   <div class="page-hero">
     <span class="tag">Who We Are</span>
-    <h1>Rooted in Scripture. Grounded in Research. Built for Your Church.</h1>
+    <h1><span class="h1-sentence">Rooted in Scripture.</span> <span class="h1-sentence">Grounded in Research.</span> <span class="h1-sentence">Built for Your Church.</span></h1>
     <p>A Christian fellowship for church leaders committed to the hard, holy work of listening well.</p>
   </div>
 
@@ -117,7 +132,7 @@
 
     <h2 class="section-heading">Our Mission</h2>
     <p>Flint Hills Cloud &amp; Fire Fellowship exists to form church leaders in the practice of structured listening — equipping them to hear what their congregations are actually carrying and to respond with pastoral care that is grounded, not guessed.</p>
-    <p>We work at the intersection of two deep traditions: the Church's centuries-long practice of communal discernment, and three decades of peer-reviewed research in structured public dialogue. Neither tradition alone is sufficient. Together, they give church leaders something durable: a practice, not just a method; formation, not just a technique.</p>
+    <p>We work at the intersection of two deep traditions: the Church's centuries-long practice of communal discernment, and three decades of peer-reviewed research in structured public dialogue. Neither tradition alone is sufficient. The discernment tradition keeps the work prayerful; the research keeps it honest. A leader formed in both carries something durable into every hard conversation a congregation will come up against.</p>
 
     <div class="pull-quote">
       <blockquote>"Understand this, my dear brothers and sisters: You must all be quick to listen, slow to speak, and slow to get angry."</blockquote>
