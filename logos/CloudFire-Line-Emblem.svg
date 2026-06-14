@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640"><g color="#1F3A4D"><defs><clipPath id="dc"><circle cx="320" cy="372" r="232"></circle></clipPath></defs>
+<g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="320" cy="372" r="232" stroke-width="9"></circle>
+<g clip-path="url(#dc)">
+<path d="M88 508 Q200 472 320 498 Q440 472 552 508" stroke-width="8"></path>
+<path d="M150 482 Q224 462 300 474" stroke-width="6" opacity="0.85"></path>
+<g stroke-width="6"><circle cx="232" cy="504" r="40"></circle><line x1="232" y1="448" x2="232" y2="432"></line><line x1="200" y1="460" x2="190" y2="448"></line><line x1="264" y1="460" x2="274" y2="448"></line><line x1="186" y1="488" x2="170" y2="482"></line><line x1="278" y1="488" x2="294" y2="482"></line></g>
+</g>
+<path d="M474 300 a40 40 0 1 0 22 66 a31 31 0 1 1 -22 -66 Z" stroke-width="6"></path>
+</g>
+<g fill="currentColor"><circle cx="514" cy="286" r="4"></circle><circle cx="538" cy="334" r="3"></circle><circle cx="520" cy="402" r="3.4"></circle></g>
+<g transform="translate(250,238) scale(1.06) translate(-250,-238)" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+<path d="M180 234 Q150 234 148 206 Q146 182 172 176 Q176 148 210 152 Q222 124 260 136 Q286 118 308 142 Q340 136 344 168 Q360 174 356 198 Q356 226 326 228 Q316 246 290 238 Q272 250 250 242 Q214 252 196 240 Q186 242 180 234 Z"></path>
+<path d="M198 206 q16 -20 36 -7 q15 11 0 22 q-13 7 -17 -6" stroke-width="5"></path>
+<path d="M278 198 q17 -16 34 -2 q13 11 -2 20 q-13 6 -17 -7" stroke-width="5"></path></g>
+<g transform="translate(385,300) scale(1.08) translate(-385,-300)" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+<path d="M330 300 Q316 262 336 232 Q330 270 352 270 Q336 230 356 196 Q352 168 374 140 Q372 176 392 178 Q384 140 414 104 Q410 150 430 170 Q438 150 442 128 Q456 168 446 210 Q438 252 410 280 Q380 304 350 304 Q338 304 330 300 Z"></path>
+<path d="M380 290 Q368 258 384 228 Q392 254 404 242 Q396 210 414 186" stroke-width="5"></path></g>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+<path d="M284 318 H356 V508 Q356 540 384 562 H256 Q284 540 284 508 Z"></path>
+<line x1="320" y1="324" x2="320" y2="556" stroke-width="5"></line>
+<line x1="304" y1="332" x2="298" y2="552" stroke-width="4" opacity="0.7"></line>
+<line x1="336" y1="332" x2="342" y2="552" stroke-width="4" opacity="0.7"></line></g>
+<g fill="currentColor"><rect x="305" y="242" width="30" height="100" rx="3"></rect><rect x="276" y="286" width="88" height="26" rx="3"></rect></g></g></svg>
