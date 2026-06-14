@@ -13,18 +13,23 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:        #1e3a5f;
-      --navy-mid:    #243f67;
-      --navy-dark:   #162d4a;
-      --slate:       #64748b;
-      --orange:      #d97706;
-      --orange-lt:   #f59e0b;
-      --cream:       #fdf8f1;
-      --cream-border:#e8dfc8;
+      --navy:        #1F3A4D;
+      --navy-mid:    #2a5266;
+      --navy-dark:   #162c3a;
+      --slate:       #6b7a82;
+      --rust:        #9C5A2E;
+      --flame:       #E07028;
+      --teal:        #3E7E72;
+      --gold:        #F2A857;
+      --parchment:   #F4EFE1;
+      --orange:      #E07028;
+      --orange-lt:   #F2A857;
+      --cream:       #F4EFE1;
+      --cream-border:#E4D9C0;
       --white:       #ffffff;
-      --text:        #1a1a2e;
-      --text-body:   #374151;
-      --border:      #e2e8f0;
+      --text:        #182530;
+      --text-body:   #3a4750;
+      --border:      #dfe5e3;
     }
 
     html { scroll-behavior: smooth; }
@@ -98,7 +103,7 @@
       font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--teal);
       margin-bottom: 22px;
     }
     .article-title {
@@ -117,7 +122,7 @@
       color: var(--slate);
       font-weight: 500;
     }
-    .byline-dot { color: var(--orange); font-size: 18px; line-height: 0; }
+    .byline-dot { color: var(--teal); font-size: 18px; line-height: 0; }
 
     /* ─── HERO IMAGE ─── */
     .hero-wrap { margin: 36px 0 6px; }
@@ -164,6 +169,8 @@
       color: var(--navy);
       line-height: 1.25;
       margin: 44px 0 18px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid var(--teal);
     }
     .section-heading:first-child { margin-top: 0; }
 
@@ -206,7 +213,7 @@
 
     /* ── Inline pull-quote ── */
     .article-pull-quote {
-      border-left: 4px solid var(--orange);
+      border-left: 4px solid var(--teal);
       padding: 6px 0 6px 24px;
       margin: 36px 0;
     }
@@ -242,7 +249,7 @@
       line-height: 1.75;
       margin-left: 0;
       padding-left: 14px;
-      border-left: 2px solid var(--border);
+      border-left: 2px solid var(--teal);
     }
 
     /* ── Fellowship Cycle ── */
@@ -273,7 +280,7 @@
     .cycle-num {
       width: 34px; height: 34px;
       border-radius: 50%;
-      background: var(--orange);
+      background: var(--teal);
       color: #fff;
       font-weight: 700;
       font-size: 15px;
@@ -298,7 +305,7 @@
 
     /* ── CTA Banner ── */
     .cta-banner {
-      background: var(--orange);
+      background: var(--teal);
       border-radius: 10px;
       padding: 50px 40px;
       text-align: center;
@@ -322,7 +329,7 @@
     .cta-btn {
       display: inline-block;
       background: #fff;
-      color: var(--orange);
+      color: var(--teal);
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       font-size: 13px;
@@ -434,7 +441,7 @@
 
     /* ── Sidebar CTA ── */
     .sidebar-cta {
-      background: var(--orange);
+      background: var(--teal);
       border-radius: 10px;
       padding: 26px 22px;
       text-align: center;
@@ -511,7 +518,7 @@
     .outcomes-list li:last-child { border-bottom: none; }
     .outcomes-list li::before {
       content: "•";
-      color: var(--orange);
+      color: var(--teal);
       font-size: 14px;
       flex-shrink: 0;
       margin-top: 0;
@@ -522,6 +529,7 @@
       background: var(--navy);
       padding: 40px 56px;
       margin-top: 0;
+      border-top: 4px solid var(--teal);
     }
     .footer-inner {
       max-width: 1200px;
@@ -574,7 +582,7 @@
       color: var(--text-body);
     }
     .outcomes-list-main li::marker {
-      color: var(--orange);
+      color: var(--teal);
     }
 
     /* ── Facilitator Topics Grid ── */
@@ -601,7 +609,7 @@
     .topic-card {
       background: var(--white);
       border: 1px solid var(--cream-border);
-      border-top: 3px solid var(--orange);
+      border-top: 3px solid var(--teal);
       border-radius: 6px;
       padding: 14px 16px;
     }
